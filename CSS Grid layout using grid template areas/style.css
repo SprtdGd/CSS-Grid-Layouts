@@ -1,0 +1,147 @@
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,900|Six+Caps');
+
+body {
+    /* font-family: 'six caps', sans-serif; */
+    display: grid;
+    /* grid-template-rows: 10em 50vh auto 10em;
+    grid-template-columns: 1fr 5fr 2fr 1fr; */
+    grid-template: "header header header header" 10em
+    "hero hero hero hero" 50vh
+    ". main sidebar ." auto
+    "footer footer footer footer" 10em 
+    / 1fr minmax(25em, 5fr) minmax(12em, 2fr) 1fr;
+    grid-column-gap: 1.5em;
+}
+
+
+
+/*
+*****************************
+* =header
+*****************************
+*/
+
+
+header {
+    grid-area: header;
+}
+
+header, footer {
+    background: #252525;
+    color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-title, .footer-title {
+    font-family: 'six caps';
+    color: yellow;
+    text-transform: uppercase;
+    font-size: 3em;
+    letter-spacing: 0.3em;
+}
+
+
+
+/*
+*****************************
+* =hero
+*****************************
+*/
+
+
+.hero {
+    grid-area: hero;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/gridarea-hero-bg.jpg);
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-title {
+    font-family: 'Six Caps';
+    font-size: 6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.hero-subtitle {
+    font-family: 'merriweather', serif;
+    color: white;
+    font-size: 2.875rem;
+    margin: 0;
+}
+
+/*
+*****************************
+* =hero
+*****************************
+*/
+
+
+main {
+    grid-area: main;
+}
+
+
+/*
+*****************************
+* =sidebar
+*****************************
+*/
+
+
+aside {
+    grid-area: sidebar;
+    background-color: #e8e8e8;
+    padding: 1.5em;
+}
+
+footer {
+    grid-area: footer;
+}
+
+/*
+*****************************
+* =cards
+*****************************
+*/
+
+.card {
+    display: grid;
+    /* grid-template-columns: 1fr 3fr;
+    grid-template-rows: min-content auto ; */
+    grid-template:
+    "img title" min-content
+    "img content" auto / 1fr 3fr;
+    grid-column-gap: 1.5em;
+    box-shadow: .2em .2em .5em rgba(0, 0, 0, 0.2);
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.card-img {
+    grid-area: img;
+    max-width: 100%;
+}
+
+.card-title {
+    grid-area: title;
+    margin: 0;
+    font-weight: 300;
+}
+
+.card-content {
+    grid-area: content;
+}
+
+
+.card-content a {
+    color: #e9d20f;
+    font-size: 1.1em;
+}
